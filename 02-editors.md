@@ -60,7 +60,7 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I will be using emacs. I also spent some time trying out vim. 
 
 --
 
@@ -68,6 +68,6 @@ What terminal editor will you use? How did you make your decision?
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I will use Sublime Text since I used this when I initially started coding and I am familiar with it. The interesting features of Sublime, is the command palette so you can add Git commands if you would like. Easily switching between files using Ctrl + p. Multi-Edit feature which allows you to find all words, select mulitple words, and edit. Also, lots of useful shortcuts: https://scotch.io/bar-talk/sublime-text-keyboard-shortcuts. 
 
  
