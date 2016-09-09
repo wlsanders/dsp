@@ -15,7 +15,17 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    count = 0
+    for i in words:
+        length = len(i)
+        if len(i) >= 2 and (i[:1]) == i[length-1:]:
+            count += 1
+    return count
+# print match_ends(['aba', 'xyz', 'aa', 'x', 'bbb'])
+# a = 'abz'
+# length = len(a)
+# print a[:1]
+# print a[length-1:]
 
 
 def front_x(words):
@@ -32,8 +42,9 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    return sorted(words, key=lambda x: 'a'+x if x[:1] == 'x' else 'b'+x)
 
+# print front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa'])
 
 def sort_last(tuples):
     """
@@ -49,7 +60,13 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    # for i in tuples:
+    #     print i 
+    output = sorted(tuples, key=lambda x: x[-1])
+    print output
+
+# sort_last([(1, 3), (3, 2), (2, 1)])
+
 
 
 def remove_adjacent(nums):
@@ -65,11 +82,19 @@ def remove_adjacent(nums):
     [2, 3]
     >>> remove_adjacent([3, 2, 3, 3, 3])
     [3, 2, 3]
-    >>> remove_adjacent([])
+))    >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
+    newnums = []
+    for n in nums:
+        if len(newnums) == 0 or n != newnums[-1]:
+            newnums.append(n)
+    return newnums
 
+# print remove_adjacent([1, 2, 2, 3])
+# print remove_adjacent([2, 2, 3, 3, 3])
+# print remove_adjacent([3, 2, 3, 3, 3])
+# print remove_adjacent([])
 
 def linear_merge(list1, list2):
     """
@@ -77,12 +102,16 @@ def linear_merge(list1, list2):
     merged list of all the elements in sorted order. You may modify
     the passed in lists. Ideally, the solution should work in "linear"
     time, making a single pass of both lists.
-
-    >>> linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc'])
-    ['aa', 'bb', 'cc', 'xx', 'zz']
-    >>> linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz'])
-    ['aa', 'bb', 'cc', 'xx', 'zz']
-    >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
-    ['aa', 'aa', 'aa', 'bb', 'bb']
     """
+    
+
+linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc'])
+    # ['aa', 'bb', 'cc', 'xx', 'zz']
+linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz'])
+    # ['aa', 'bb', 'cc', 'xx', 'zz']
+linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
+ # ['aa', 'aa', 'aa', 'bb', 'bb']
+    
+
+
     raise NotImplementedError

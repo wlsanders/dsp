@@ -8,7 +8,7 @@ def donuts(count):
     form 'Number of donuts: <count>', where <count> is the number
     passed in. However, if the count is 10 or more, then use the word
     'many' instead of the actual count.
-
+    
     >>> donuts(4)
     'Number of donuts: 4'
     >>> donuts(9)
@@ -18,7 +18,13 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+    if count <= 10: 
+        return "Number of donuts: %i" % count
+    else:
+        return "Numer of donuts: many" 
+    # raise NotImplementedError
+# print donuts(4)
+# print donuts(99)
 
 
 def both_ends(s):
@@ -37,7 +43,20 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    # raise NotImplementedError
+    if len(s) < 2:
+        return ""
+    else:
+        return s[:len(s)-(len(s)-2)] + s[len(s)-2:] 
+
+# s = "spring"
+# t = "Hello"
+# u = "xyz"
+# a = 'a'
+# print both_ends(s)
+# print both_ends(t)
+# print both_ends(u)
+# print both_ends(a)
 
 
 def fix_start(s):
@@ -56,7 +75,21 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    char = s[0]
+    newstring = ""
+    for i in xrange(len(s)):
+        if i != 0 and s[i] == char:
+            newstring = newstring + ("*")
+        else:
+            newstring = newstring + (s[i])
+    return newstring
+
+
+# print fix_start('babble')
+# print fix_start('aardvark')
+
+
+    # raise NotImplementedError
 
 
 def mix_up(a, b):
@@ -74,7 +107,12 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    d = a[:2] + b[2:]
+    c = b[:2] + a[2:]
+    return c, d
+
+# mix_up('mix', 'pod')
+# mix_up('dog','dinner')
 
 
 def verbing(s):
@@ -91,8 +129,12 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
-
+    if len(s) >= 3:
+        if s[len(s)-3:] != 'ing':
+            return s + "ing"
+        elif s[len(s)-3:] == 'ing':
+            return s + 'ly'
+    return s
 
 def not_bad(s):
     """
@@ -111,7 +153,15 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
+    testletter = ""
+    for i in xrange(len(s)):
+        if s[i] == 'b' or s[i] == 'n':
+            testletter = testletter + s[i]
+            # print testletter
+        # print i
+        
+
+not_bad('This movie is not so bad')
 
 
 def front_back(a, b):
@@ -130,4 +180,37 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    newstring = ""
+    lengthA = len(a)
+    lengthB = len(b)
+    if lengthA%2 == 0: 
+        newstring += a[:lengthA/2]
+    else:
+        newstring += a[:lengthA/2 + 1]
+    return newstring
+
+
+print front_back('abcd', 'xy')
+print front_back('abcde', 'xyz')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
