@@ -19,13 +19,22 @@ Lists are mutable
 
 Tuples: They are immutable (Big Difference). They can be any type. 
 
+Tuples will work as keys in a dictionary, lists can't be used as a key in a dictionary. 
+
 ---
 
 ###Q2. Lists &amp; Sets
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
-sets: unordered, a set requires items to be hashable but a list does not. 
+sets: unordered, a set requires items to be hashable but a list does not. Sets can't contain duplicates, sets do not allow indexing. 
+
+Sets are significantly faster if determining if an object is located in the set but are slower when you iterate over the contens. 
+
+tryingSets = set([1,2,3,4, 4,5,6,5,4,3,2,1])
+tryingLists = list([1,2,3,4,4,4,3,2,5])
+
+print tryingSets prints [set([1, 2, 3, 4, 5, 6]) and print tryingLists prints [1, 2, 3, 4, 4, 4, 3, 2, 5]]
 
 ---
 
@@ -33,7 +42,25 @@ sets: unordered, a set requires items to be hashable but a list does not.
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> The lambda function is a way to create small anonymous functions, i.e. functions without a name. 
+
+A quick example would be f = lambda x, y: x + y
+print f(1,1) -> prints 2
+
+Another example is taken from [link](https://docs.python.org/2.7/howto/sorting.html). 
+
+student_tuples = [
+('john', 'A', 15),
+('jane', 'B', 12),
+('dave', 'B', 10),
+]
+print sorted(student_tuples, key=lambda student: student[2])   # sort by age
+# prints [('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+
+
+
+
+
 
 ---
 
