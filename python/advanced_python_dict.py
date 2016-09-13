@@ -1,34 +1,3 @@
-# import csv
-# facultyFile = open('faculty.csv')
-# facultyReader = csv.reader(facultyFile)
-# facultyData = list(facultyReader)
-
-# for rows in facultyData:
-# 	index = rows[0]
-# 	degree = rows[1]
-# 	title = rows[2]
-# 	email = rows[3]
-
-# 	mydict = {index: }
-
-
-# import csv
-# with open('faculty.csv') as facultyFile:
-# 	dictionary = dict(filter(None, csv.reader(facultyFile)))
-
-# print dictionary
-# # 
-# # 
-# import csv
-# reader = csv.reader(open('faculty.csv'))
-
-# faculty_dict = {}
-# for row in reader:
-# 	key = row[0]
-# 	if key in faculty_dict:
-# 		pass
-# 	faculty_dict[key] = row[1:]
-# print faculty_dict
 
 
 import csv
@@ -56,12 +25,49 @@ def differentDegrees(facultyData):
 
 	return facultyList, facultyValues
 
-
 listOfFacultyIndex, listOfFacultyValues = differentDegrees(facultyData)
-# print listOfFacultyIndex
 
-a = zip(listOfFacultyIndex, listOfFacultyValues)
-# print a
-print dict(facultyData)
 
-# print facultyData
+
+def findingLastName(listOfFacultyValues):
+	lastName = []
+	for name in listOfFacultyIndex:
+		delimiter = " "
+		s = name.split(delimiter)
+		# print s
+		if len(s) == 3:
+			lastName.append(s[2])
+		elif len(s) == 2:
+			lastName.append(s[1])
+	return lastName
+
+lastName = findingLastName(listOfFacultyValues)
+# faculty_dict[lastName[0]] = listOfFacultyValues[0]
+# faculty_dict[lastName[14]] = listOfFacultyValues[14]
+# faculty_dict[lastName[15]] = [listOfFacultyValues[15]]
+# faculty_dict[lastName[16]] += [listOfFacultyValues[16]]
+# faculty_dict[lastName[17]] += [listOfFacultyValues[17]]
+# print faculty_dict
+
+def facultyDictionary(lastName, listOfFacultyValues):
+	faculty_dict = dict()
+	for count in xrange(len(lastName)):
+		if lastName[count] not in faculty_dict:
+			faculty_dict[lastName[count]] = [listOfFacultyValues[count]]
+		else:
+			faculty_dict[lastName[count]] += [listOfFacultyValues[count]]
+	return faculty_dict
+	# print faculty_dict
+
+faculty_dict = facultyDictionary(lastName, listOfFacultyValues)
+
+
+# print faculty_dict
+
+first3pairs = {k: faculty_dict[k] for k in faculty_dict.keys()[:3]}
+print first3pairs
+
+
+
+
+
