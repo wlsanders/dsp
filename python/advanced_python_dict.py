@@ -110,8 +110,7 @@ first3pairs = {k: newFaculty_dict[k] for k in newFaculty_dict.keys()[:3]}
 """
 Q7
 """
-sortedDict = sorted(newFaculty_dict.items(), key=lambda newFaculty_dict: newFaculty_dict[1], reverse=False)
-
+sortedDict = sorted(newFaculty_dict.items(), key=lambda newFaculty_dict: newFaculty_dict[1], reverse=True)
 
 print sortedDict
 
