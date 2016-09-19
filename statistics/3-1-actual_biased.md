@@ -1,3 +1,3 @@
 [Think Stats Chapter 3 Exercise 1](http://greenteapress.com/thinkstats2/html/thinkstats2004.html#toc31) (actual vs. biased)
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> We need to plot the actual and biased distributions, and compute their means. To do this, we need to use the NSFG respondent variable to construct the actual distribution for the number of children under 18 in the household. We need to construct a pmf of the variable. We then want to find the BiasPMF. With the variables pmf and biasedpmf, we then can just take their means and find 1.0242 and 2.4036 respectively. 
